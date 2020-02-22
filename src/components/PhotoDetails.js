@@ -33,7 +33,7 @@ class PhotoDetails extends Component {
           <h4>Tags: {tags}</h4>
           <h4>Photo Link: <a href={photoLink}>{photoLink}</a></h4>
           <Link to="/">
-            <button className="back-button" style={{ width: 300 }} alt="">Back to main page</button>
+            <button className="back-button" style={{ width: 300, marginBottom: 30 }} alt="">Back to main page</button>
           </Link>
         </div>
       </div>

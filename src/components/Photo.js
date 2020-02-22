@@ -5,29 +5,38 @@ class Photo extends Component {
   constructor(props) {
     super(props);
     this.state={
-      plainStyle: {
-        position: "absolute", bottom: 8, left: 16, zIndex: 101, fontSize: 5, fontWeight: 100, opacity: 0
-      },
-      showStyle: {
-        position: "absolute", bottom: 8, left: 16, zIndex: 101, fontSize: 5, fontWeight: 100, opacity: 1
-      },
-      boxPlainStyle: { 
+      photoContainer: { 
         position: "relative", width: "14%", padding: 10, paddingBottom: 30, marginRight: "2%", marginBottom: "3%", height: 120, backgroundColor: "white", borderRadius: 5 
       },
-      boxShowStyle: { 
+      photoContainerFocused: { 
         position: "relative", width: "14%", padding: 10, paddingBottom: 30, marginRight: "2%", marginBottom: "3%", height: 120, backgroundColor: "white", borderRadius: 5, boxShadow: "0px 3px 3px 3px rgba(128,128,128,0.6) "
       },
-      noOpacity: {
+      photoDescriptionHide: {
         opacity: 0,
         textAlign: "left",
         position: "absolute",
         bottom: 5,
       },
-      hasOpacity: {
+      photoDescriptionShow: {
         opacity: 1,
         textAlign: "left",
         position: "absolute",
         bottom: 5,
+      },
+      photoDetailsHide: {
+        zIndex: 101, 
+        fontSize: 11,
+        position: "absolute",
+        top: 10, 
+        right: 10,
+        opacity: 0,
+      },
+      photoDetailsShow: {
+        zIndex: 101, 
+        fontSize: 11,
+        position: "absolute", 
+        top: 10, 
+        right: 10,
       },
       show: false
     };
@@ -42,19 +51,17 @@ class Photo extends Component {
     const { index, author, dateTaken, tags, photoLink, thumbnailPhotoLink } = this.props;
     const replacedLink = thumbnailPhotoLink.replace("m.jpg", "t.jpg");
     return (
-      <div className="photo-container" onMouseEnter={this.changeFontStyle} onMouseLeave={this.changeFontStyle} style={this.state.show ? this.state.boxShowStyle : this.state.boxPlainStyle}>
+      <div className="photo-container" onMouseEnter={this.changeFontStyle} onMouseLeave={this.changeFontStyle} style={this.state.show ? this.state.photoContainerFocused : this.state.photoContainer}>
       <Link to={`details/${index}`} state={{ photo: thumbnailPhotoLink, author, tags, photoLink, dateTaken }}>
         <div style={{ textAlign: 'center', alignItems: "center", height: "80%" }}>
           <img style={{ zIndex: 100, verticalAlign: 'middle' }} src={replacedLink} alt="" />
         </div>
-        <div id="photo-description" style={this.state.show ? this.state.hasOpacity : this.state.noOpacity }>
-          {/* <div className="photo-bottom-right" style={{ position: "absolute", bottom: 25, left: 6, zIndex: 101, fontSize: 6, fontWeight: 200, color: "black" }}>Author: {author}</div>
-          <div className="photo-tags" style={{ position: "absolute", bottom: 15, left: 6, zIndex: 101, fontSize: 6, fontWeight: 200, color: "black" }}>Tags:{tags}</div>
-          <div className="photo-bottom-left" style={{ position: "absolute", bottom: 5, left: 6, zIndex: 101, fontSize: 6, fontWeight: 200, color: "black" }}>{dateTaken}</div> */}
+        <div id="photo-description" style={this.state.show ? this.state.photoDescriptionShow : this.state.photoDescriptionHide }>
             <div className="photo-date-taken" style={{ zIndex: 101, fontSize: 9, fontWeight: 200, color: "black" }}>{dateTaken}</div>
             <div className="photo-author" style={{ zIndex: 101, fontSize: 9, fontWeight: 200, color: "black", marginBottom: 3 }}>By: {author}</div>
-            {/* <div className="photo-tags" style={{ zIndex: 101, fontSize: 8, fontWeight: 200, color: "black", marginBottom: 3 }}>Tags: {tags}</div> */}
-            {/* <a className="photo-link" style={{ zIndex: 101, fontSize: 8, fontWeight: 200, color: "black", marginBottom: 3 }} href={photoLink}>{photoLink}</a> */}
+        </div>
+        <div>
+            <div className="photo-details" style={this.state.show ? this.state.photoDetailsShow : this.state.photoDetailsHide}>more</div>
         </div>
       </Link>
       </div>
