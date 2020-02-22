@@ -14,13 +14,13 @@ class PhotoDetails extends Component {
 
   componentDidMount() {
     const { photo, author, tags, dateTaken, photoLink } = this.props.location.state;
-    const replacedPhotoLink = photo.replace("m.jpg", "b.jpg");
+    const replacedPhotoLink = photo.replace("m.jpg", "c.jpg");
     console.log(replacedPhotoLink);
   }
   render() {
     const { photo, author, tags, dateTaken, photoLink } = this.props.location.state;
     console.log("author is: ", author);
-    const replacedPhotoLink = photo.replace("m.jpg", "b.jpg");
+    const replacedPhotoLink = photo.replace("m.jpg", "c.jpg");
     console.log(replacedPhotoLink);
     return (
       <div className="photo-details-container">
@@ -28,7 +28,7 @@ class PhotoDetails extends Component {
           <img src={replacedPhotoLink} alt="" />
         </div>
         <div className="photo-description">
-          <h4>Photo By: {author}</h4>
+          <h3>Photo By: {author}</h3>
           <h4>Taken At: {dateTaken}</h4> 
           <h4>Tags: {tags}</h4>
           <h4>Photo Link: <a href={photoLink}>{photoLink}</a></h4>
