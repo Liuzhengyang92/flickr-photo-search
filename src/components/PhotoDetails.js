@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from '@reach/router';
 import './PhotoDetails.css';
 
 class PhotoDetails extends Component {
@@ -12,13 +14,13 @@ class PhotoDetails extends Component {
 
   componentDidMount() {
     const { photo, author, tags, dateTaken, photoLink } = this.props.location.state;
-    const replacedPhotoLink = photo.replace("m.jpg", "c.jpg");
+    const replacedPhotoLink = photo.replace("m.jpg", "b.jpg");
     console.log(replacedPhotoLink);
   }
   render() {
     const { photo, author, tags, dateTaken, photoLink } = this.props.location.state;
     console.log("author is: ", author);
-    const replacedPhotoLink = photo.replace("m.jpg", "c.jpg");
+    const replacedPhotoLink = photo.replace("m.jpg", "b.jpg");
     console.log(replacedPhotoLink);
     return (
       <div className="photo-details-container">
@@ -26,14 +28,23 @@ class PhotoDetails extends Component {
           <img src={replacedPhotoLink} alt="" />
         </div>
         <div className="photo-description">
-          <h1>Photo By: {author}</h1>
-          <h3>Taken At: {dateTaken}</h3> 
-          <h3>Tags: {tags}</h3>
-          <h3>Photo Link: <a href={photoLink}>{photoLink}</a></h3>
+          <h4>Photo By: {author}</h4>
+          <h4>Taken At: {dateTaken}</h4> 
+          <h4>Tags: {tags}</h4>
+          <h4>Photo Link: <a href={photoLink}>{photoLink}</a></h4>
+          <Link to="/">
+            <button className="back-button" style={{ width: 300 }} alt="">Back to main page</button>
+          </Link>
         </div>
       </div>
     );
   }
 }
 
-export default PhotoDetails;
+const mapStateToProps = state => {
+  return {
+    tag: state.app.tag,
+  };
+};
+
+export default connect(mapStateToProps)(PhotoDetails);

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Router, Link } from "@reach/router";
-import SearchBar from './components/SearchBar';
+import ClassSearchBar from './components/ClassSearchBar';
 import PhotoDetails from './components/PhotoDetails';
 import './App.css';
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <SearchBar path="/"/>
+        <ClassSearchBar path="/" />
         <PhotoDetails path="/details/:id" />
       </Router>
     </div>

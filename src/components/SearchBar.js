@@ -3,12 +3,11 @@ import { Input } from 'antd';
 import { apiBaseUrl, fetchPhotosFromFlickr } from '../api/index';
 import Photos from '../components/Photos';
 import $ from 'jquery';
+import * as actionTypes from '../redux/actionTypes';
 
-const { Search } = Input;
 const SearchBar = () => {
   const [tag, setTag] = useState([""]);
   const [photos, setPhotos] = useState([]);
-
   useEffect(() => {
     // function jsonp(url, callback) {
     //   let callbackName = 'jsonFlickrFeed';
@@ -57,7 +56,9 @@ const SearchBar = () => {
 
       <input style={{ borderBottom: "lightgrey solid 1px", bordeWidth: "thin", width: "70%", height: 30, borderRadius: 5, marginTop: 30, marginLeft: 5, marginBottom: 50 }}
         placeholder="people, animail, view, anything you are interested in..."
-        onChange={e => setTag(e.target.value)}
+        onChange={e => {
+          setTag(e.target.value);
+        }}
       >
       </input>
       </div>

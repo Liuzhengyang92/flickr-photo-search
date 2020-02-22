@@ -2,8 +2,9 @@
   padding-top: 30px;
   align-items: center;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   position: absolute;
-  width: 100%;
   left: 5%;
   top: 3%
 }
@@ -29,4 +30,21 @@
 .photo-details-container img {
   border-radius: 10px;
   display: block;
+}
+
+.photo-description {
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-description .back-button {
+  height: 50px;
+  width: 300;
+  border-radius: 5px;
+}
+
+.photo-description .back-button:hover {
+  background-color: darkgray;
 }
