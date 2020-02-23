@@ -2,9 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to run the code:
 
-###1. Clone the code to your local machine useing SSH or HTTPS, or just simply download it.
+### 1. Clone the code to your local machine useing SSH or HTTPS, or just simply download it.
 
-###2. Environment Preparation
+### 2. Environment Preparation
 #### Install node_modules: 
 ```bash
 npm install
@@ -15,7 +15,7 @@ or
 ```bash
 yarn
 ```
-###3. Run the code:
+### 3. Run the code:
 ```bash
 npm start
 ```
