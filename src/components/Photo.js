@@ -4,6 +4,7 @@ import { Link } from '@reach/router';
 class Photo extends Component {
   constructor(props) {
     super(props);
+    this.changeFontStyle = this.changeFontStyle.bind(this);
     this.state={
       photoContainer: { 
         position: "relative", width: "14%", padding: 10, paddingBottom: 30, marginRight: "2%", marginBottom: "3%", height: 120, backgroundColor: "white", borderRadius: 5 
@@ -41,7 +42,7 @@ class Photo extends Component {
       show: false
     };
   }
-  changeFontStyle = (e) => {
+  changeFontStyle() {
     this.setState({
       show: !this.state.show
     });
