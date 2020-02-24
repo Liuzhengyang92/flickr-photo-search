@@ -64,7 +64,6 @@ class SearchBar extends React.Component {
     return (
       <div style={{ width: "100%", height: "100%" }}>
         <div style={{ height: 80, backgroundColor: "#C1C1C1", position: "fixed", zIndex: 150, width: "100%", top: 0, marginBottom: 15 }}>
-
           Search your interest
           <input style={{ borderBottom: "lightgrey solid 1px", bordeWidth: "thin", width: "70%", height: 30, borderRadius: 5, marginTop: 30, marginLeft: 5, marginBottom: 50 }}
             placeholder="people, animail, view, anything you are interested in..."

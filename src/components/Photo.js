@@ -53,18 +53,18 @@ class Photo extends Component {
     const replacedLink = thumbnailPhotoLink.replace("m.jpg", "t.jpg");
     return (
       <div className="photo-container" onMouseEnter={this.changeFontStyle} onMouseLeave={this.changeFontStyle} style={this.state.show ? this.state.photoContainerFocused : this.state.photoContainer}>
-      <Link to={`details/${index}`} state={{ photo: thumbnailPhotoLink, author, tags, photoLink, dateTaken }}>
-        <div style={{ textAlign: 'center', alignItems: "center", height: "80%" }}>
-          <img style={{ zIndex: 100, verticalAlign: 'middle' }} src={replacedLink} alt="" />
-        </div>
-        <div id="photo-description" style={this.state.show ? this.state.photoDescriptionShow : this.state.photoDescriptionHide }>
-            <div className="photo-date-taken" style={{ zIndex: 101, fontSize: 9, fontWeight: 200, color: "black" }}>{dateTaken}</div>
-            <div className="photo-author" style={{ zIndex: 101, fontSize: 9, fontWeight: 200, color: "black", marginBottom: 3 }}>By: {author}</div>
-        </div>
-        <div>
-            <div className="photo-details" style={this.state.show ? this.state.photoDetailsShow : this.state.photoDetailsHide}>more</div>
-        </div>
-      </Link>
+        <Link to={`details/${index}`} state={{ photo: thumbnailPhotoLink, author, tags, photoLink, dateTaken }}>
+          <div style={{ textAlign: 'center', alignItems: "center", height: "80%" }}>
+            <img style={{ zIndex: 100, verticalAlign: 'middle' }} src={replacedLink} alt="" />
+          </div>
+          <div id="photo-description" style={this.state.show ? this.state.photoDescriptionShow : this.state.photoDescriptionHide }>
+              <div className="photo-date-taken" style={{ zIndex: 101, fontSize: 9, fontWeight: 200, color: "black" }}>{dateTaken}</div>
+              <div className="photo-author" style={{ zIndex: 101, fontSize: 9, fontWeight: 200, color: "black", marginBottom: 3 }}>By: {author}</div>
+          </div>
+          <div>
+              <div className="photo-details" style={this.state.show ? this.state.photoDetailsShow : this.state.photoDetailsHide}>more</div>
+          </div>
+        </Link>
       </div>
     );
   }
