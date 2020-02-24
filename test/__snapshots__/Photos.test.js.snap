@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "marginLeft": "8%",
+      "marginTop": 100,
+      "overflowY": "scroll",
+      "width": "100%",
+    }
+  }
+>
+  <h1>
+    No Photos to Show...
+  </h1>
+</div>
+`;
