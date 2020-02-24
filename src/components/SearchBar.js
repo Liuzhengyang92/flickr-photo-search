@@ -9,26 +9,6 @@ const SearchBar = () => {
   const [tag, setTag] = useState([""]);
   const [photos, setPhotos] = useState([]);
   useEffect(() => {
-    // function jsonp(url, callback) {
-    //   let callbackName = 'jsonFlickrFeed';
-    //   window[callbackName] = function (data) {
-    //     delete window[callbackName];
-    //     document.body.removeChild(script);
-    //     callback(data);
-    //   };
-    //   let script = document.createElement('script');
-    //   script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-    //   script.src = url;
-    //   document.body.appendChild(script);
-    // }
-
-    // console.log("link is: ", apiBaseUrl+`&tags=${type}`);
-    // jsonp(apiBaseUrl+`&tags=${type}`, callback);
-
-    // function callback(data) {
-    //   console.log(data.items);
-    //   setPhotos(data.items);
-    // }
     const flickrApiPoint = `https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=${tag}&jsoncallback=?`;
 
     try {

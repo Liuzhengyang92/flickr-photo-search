@@ -5,7 +5,6 @@ import './PhotoDetails.css';
 
 class PhotoDetails extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
 
@@ -15,13 +14,10 @@ class PhotoDetails extends Component {
   componentDidMount() {
     const { photo, author, tags, dateTaken, photoLink } = this.props.location.state;
     const replacedPhotoLink = photo.replace("m.jpg", "c.jpg");
-    console.log(replacedPhotoLink);
   }
   render() {
     const { photo, author, tags, dateTaken, photoLink } = this.props.location.state;
-    console.log("author is: ", author);
     const replacedPhotoLink = photo.replace("m.jpg", "c.jpg");
-    console.log(replacedPhotoLink);
     return (
       <div className="photo-details-container">
         <div className="photo-frame">
